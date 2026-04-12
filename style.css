@@ -175,6 +175,48 @@ ul { list-style: none; }
 
 .btn-full { width: 100%; }
 
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(0, 33, 19, 0.3);
+    border-top-color: #002113;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.form-status {
+    padding: 1rem 1.2rem;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-top: 0.75rem;
+}
+
+.form-status-success {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--accent-border);
+    color: var(--accent-bright);
+}
+
+.form-status-error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    color: #f87171;
+}
+
 /* --- Navigation --- */
 .nav {
     position: fixed;
